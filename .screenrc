@@ -1,0 +1,13 @@
+# Make a nice bottom screen to display the screen session
+caption always "%{= kc}windows: %?%-Lw%?%{= kY}%n*%f %t%?(%u)%?%{= kc}%?%+Lw%?"
+
+# This enables alternate screen, which is disabled by default, but
+# is normally enabled in most terminals. It's the thing which prevents
+# less, vi, etc. from clobbering the screen contents and leaving their
+# gunk behind after exiting.
+# (https://news.ycombinator.com/item?id=1710719)
+altscreen on
+
+# Save 50,000 lines of scrollback history.
+defscrollback 50000
+
