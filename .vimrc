@@ -1,10 +1,54 @@
+
+"" Specify a directory for plugins
+"" - For Neovim: stdpath('data') . '/plugged'
+"" - Avoid using standard Vim directory names like 'plugin'
+"call plug#begin('~/.vim/plugged')
+"
+"" required for https://scalameta.org/metals/docs/editors/vim.html
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'junegunn/fzf.vim' " needed for previews
+"Plug 'antoinemadec/coc-fzf'
+"Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
+"
+"
+"" Initialize plugin system
+"call plug#end()
+"
+"
+"" Begin 
+"" https://github.com/neoclide/coc.nvim/
+"
+"" Don't pass messages to |ins-completion-menu|.
+"set shortmess+=c
+"
+"" Use <c-space> to trigger completion.
+""if has('nvim')
+""  inoremap <silent><expr> <c-space> coc#refresh()
+""else
+""  inoremap <silent><expr> <c-@> coc#refresh()
+""endif
+"
+"nmap <silent> gd <Plug>(coc-definition)
+"nmap <silent> gy <Plug>(coc-type-definition)
+"nmap <silent> gi <Plug>(coc-implementation)
+"nmap <silent> gr <Plug>(coc-references)
+"
+"
+"" End
+"" https://github.com/neoclide/coc.nvim/
+
 colorscheme darkblue
 syntax enable
 
-set tabstop=4
+set tabstop=2
 set expandtab
-set softtabstop=4
+set softtabstop=2
+set textwidth=100
 set ruler
+
+" set this to enable copying from your compute cut&past buffer
+" set clipboard=unnamed
 
 
 " With both ignorecase and smartcase turned on, a search is
@@ -91,6 +135,9 @@ set showcmd
 "  %    :  saves and restores the buffer list
 "  n... :  where to save the viminfo files
 set viminfo='100,\"100,:20,%,n~/.viminfo
+
+
+"set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
