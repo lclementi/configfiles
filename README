@@ -1,0 +1,17 @@
+
+. Check out the files in this repo to you home folder ($HOME)
+. Install exuberant tag (`brew install ctags`)
+. Install vim (`brew install vim`)
+. Create a file .ctagspath to define the directory you want to index every time you run the cmd
+. Define the following function in your .profile reload your bash (no ksh sorry)
+
+```
+function generate_tags() {
+  path=`cat ~/.ctagspath | grep -v '^#' | tr '\n' ' '`
+  echo $path
+  ctags -R $path
+  mv tags.temp tags
+}
+```
+. ctrl] allows you to navigate to a tag, crtl+t goes back (g+ctrlt gives you a menu in case there
+  are multiple matches)
