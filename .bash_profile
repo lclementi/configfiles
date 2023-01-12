@@ -20,3 +20,4 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 alias ls='ls -G'
 alias ll='ls -lG'
+alias bc='bc -l'
